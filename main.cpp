@@ -1,5 +1,5 @@
-#include "hello.h"
-
-int main (void){
-    hello();
+#include
+int main()
+{
+std::cout << "Hello world\n";
 }
