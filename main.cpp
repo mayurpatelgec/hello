@@ -1,5 +1,5 @@
 #include <iostream>
-int main()
-{
-std::cout << "Hello world\n";
+#include <boost/version .hpp>
+int main() {
+std : : cout << BOOST_LIB_VERSION << '\n ' ;
 }
