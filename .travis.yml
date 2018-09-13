@@ -8,8 +8,8 @@ script:
     - qmake travis_qmake_gcc_cpp98_gcov.pro
     - make
     - ./travis_qmake_gcc_cpp98_gcov
-    - sudo chmod u+x get_code_cov
-    - sudo ./get_code_cov
+    - sudo chmod u+x get_code_cov.sh
+    - sudo ./get_code_cov.sh
     - codecov
 after_success:
     - bash <(curl -s https://codecov.io/bash)
