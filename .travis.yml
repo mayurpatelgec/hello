@@ -9,7 +9,7 @@ script:
     - make
     - ./travis_qmake_gcc_cpp98_gcov
     - sudo chmod u+x get_code_cov
-    - ./get_code_cov
+    - sudo ./get_code_cov
     - codecov
 after_success:
     - bash <(curl -s https://codecov.io/bash)
