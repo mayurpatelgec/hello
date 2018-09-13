@@ -2,14 +2,13 @@ sudo: require
 language: cpp
 compiler: gcc
 
-before_install:
-    - sudo pip install codecov
+
+install:
+    - sudo add-apt-repository ppa:ubuntu-toolchain-r/test --yes
+    - sudo apt-get update -qq
+    - sudo apt-get install -qq libstdc++6-4.7-dev
+    - ./install_oclint.sh
 script:
-    - qmake travis_qmake_gcc_cpp98_gcov.pro
-    - make
-    - ./travis_qmake_gcc_cpp98_gcov
-    - sudo chmod u+x get_code_cov.sh
-    - sudo ./get_code_cov.sh
-    - codecov
-after_success:
-    - bash <(curl -s https://codecov.io/bash)
+    - ./build.sh
+    - ./travis_qmake_gcc_cpp98_oclint
+    - ./do_oclint.sh
